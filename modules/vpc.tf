@@ -14,7 +14,7 @@ resource "aws_internet_gateway" "appgateway" {
 resource "aws_subnet" "appsubnet" {
   vpc_id                  = "${aws_vpc.appvpc.id}"
   cidr_block              = "${var.subnet_cidr}"
-  map_public_ip_on_launch = false
+  map_public_ip_on_launch = true
   availability_zone       = "${var.subnet_availability_zone}"
 
   tags = {
@@ -60,7 +60,19 @@ resource "aws_security_group" "appsg" {
 
   # Inbound Rules
   # HTTP access from anywhere
-  # SSH access from anywhere
+  # SSH access from anywhere  
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   ingress {
     from_port   = 22
     to_port     = 22

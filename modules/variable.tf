@@ -109,47 +109,6 @@ variable "db_skip_final_snapshot" {
   description = "database skip final snapshot "
 }
 
-variable "app_elb_cross_zone_load_balancing" {
-  type = bool
-}
-
-variable "app_elb_health_check_healthy_threshold" {
-  type = number
-}
-
-variable "app_elb_health_check_unhealthy_threshold" {
-  type = number
-}
-
-variable "app_elb_health_check_timeout" {
-  type = number
-}
-
-variable "app_elb_health_check_interval" {
-  type = number
-}
-
-variable "app_elb_health_check_target" {
-  type = string
-}
-
-variable "app_elb_listener_lb_port" {
-  type = number
-}
-
-variable "app_elb_listener_lb_protocol" {
-  type = string
-}
-
-variable "app_elb_listener_instance_port" {
-  type = number
-}
-
-variable "app_elb_listener_instance_protocol" {
-  type = string
-}
-
-
 variable "subnet_cidr" {
   description = "CIDR block for the first subnet."
   type        = string

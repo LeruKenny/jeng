@@ -27,17 +27,6 @@ module "EC2" {
   instance_tenancy = var.instance_tenancy
   vpc-tags = var.vpc-tags
 
-  app_elb_cross_zone_load_balancing = var.app_elb_cross_zone_load_balancing
-  app_elb_health_check_healthy_threshold = var.app_elb_health_check_healthy_threshold
-  app_elb_health_check_unhealthy_threshold = var.app_elb_health_check_unhealthy_threshold
-  app_elb_health_check_timeout = var.app_elb_health_check_timeout
-  app_elb_health_check_interval = var.app_elb_health_check_interval
-  app_elb_health_check_target = var.app_elb_health_check_target
-  app_elb_listener_lb_port = var.app_elb_listener_lb_port
-  app_elb_listener_lb_protocol = var.app_elb_listener_lb_protocol
-  app_elb_listener_instance_port = var.app_elb_listener_instance_port
-  app_elb_listener_instance_protocol = var.app_elb_listener_instance_protocol
-
   subnet_cidr = var.subnet_cidr
   subnet_availability_zone = var.subnet_availability_zone
   subnet1_cidr = var.subnet1_cidr
@@ -47,6 +36,3 @@ module "EC2" {
   route_tags = var.route_tags
   
 }
-
-
-

@@ -26,7 +26,7 @@ variable "key_name" {
 variable "associate_public_ip_address" {
   type = bool
   description = "to set up associate public ip address"
-  default = false
+  default = true
 }
 
 variable "user_data" {
@@ -122,58 +122,6 @@ variable "db_skip_final_snapshot" {
   description = "database skip final snapshot "
   default = true
 }
-
-
-variable "app_elb_cross_zone_load_balancing" {
-  type = bool
-  default = true
-}
-
-variable "app_elb_health_check_healthy_threshold" {
-  type = number
-  default = 2
-}
-
-variable "app_elb_health_check_unhealthy_threshold" {
-  type = number
-  default = 2
-}
-
-variable "app_elb_health_check_timeout" {
-  type = number
-  default = 3
-}
-
-variable "app_elb_health_check_interval" {
-  type = number
-  default = 30
-}
-
-variable "app_elb_health_check_target" {
-  type = string
-  default = "HTTP:80/"
-}
-
-variable "app_elb_listener_lb_port" {
-  type = number
-  default = 80 
-}
-
-variable "app_elb_listener_lb_protocol" {
-  type = string
-  default = "http"
-}
-
-variable "app_elb_listener_instance_port" {
-  type = number
-  default = 80
-}
-
-variable "app_elb_listener_instance_protocol" {
-  type = string
-  default = "http"
-}
-
 
 variable "subnet_cidr" {
   description = "CIDR block for the first subnet."
